@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Baju Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Azara Fashion</h1>
+    <nav>
+      <a href="#">Beranda</a>
+      <a href="#">Produk</a>
+      <a href="#">Keranjang</a>
+    </nav>
+  </header>
+
+  <section class="filter">
+    <h2>🧥 Pilih Kategori</h2>
+    <select id="filterKategori" onchange="filterProduk()">
+      <option value="all">Semua</option>
+      <option value="pria">Baju Pria</option>
+      <option value="wanita">Baju Wanita</option>
+      <option value="jaket">Jaket</option>
+    </select>
+  </section>
+
+  <section class="produk-container" id="produkContainer"></section>
+
+  <section class="keranjang">
+    <h2>🛒 Keranjang Belanja</h2>
+    <ul id="daftarKeranjang"></ul>
+    <p id="totalHarga">Total: Rp 0</p>
+    <button id="checkoutBtn" onclick="tampilkanFormPembayaran()">Checkout</button>
+  </section>
+
+  <!-- Form Pembayaran -->
+  <section class="pembayaran" id="formPembayaran" style="display:none;">
+    <h2>💳 Form Pembayaran</h2>
+    <form id="formBayar" onsubmit="prosesPembayaran(event)">
+      <label>Nama Lengkap:</label>
+      <input type="text" id="nama" required>
+
+      <label>Alamat Pengiriman:</label>
+      <textarea id="alamat" required></textarea>
+
+      <label>Metode Pembayaran:</label>
+      <select id="metode" required>
+        <option value="">-- Pilih --</option>
+        <option value="Transfer Bank">Transfer Bank</option>
+        <option value="COD (Bayar di Tempat)">COD (Bayar di Tempat)</option>
+        <option value="E-Wallet (Dana, Gopay, OVO)">E-Wallet (Dana, Gopay, OVO)</option>
+      </select>
+
+      <button type="submit">Bayar Sekarang</button>
+      <button type="button" onclick="batalBayar()">Batal</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Toko Baju Online | Dibuat oleh Alwi Alimatul Ihsan</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
